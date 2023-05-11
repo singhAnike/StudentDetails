@@ -1,0 +1,31 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="student_name">Student Name:</label>
+    <input type="text" name="student_name" required><br><br>
+    
+    <label for="board_name">Board:</label>
+    <select id="board_name" name="board_name">
+        <option value="select">select</option>
+        {% for board in boards %}
+        <option value="{{board.Board}}"> {{board.Board}}</option>
+        {% endfor %}
+
+    </select><br><br>
+
+    <label for="medium_name">Medium:</label>
+    <select id="medium_name" name="medium_name" >
+        <option value= "">select</option>
+        {% for m in Med %}
+        <option value="{{m.Medium}}"> {{m.Medium}}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label for="standard_name">Standard:</label>
+    <select id="standard_name" name="standard_name" >
+        <option value= "">select</optin>
+        {% for s in std %}
+        <option value="{{s.Standard}}"> {{s.Standard}}</option>
+        {% endfor %}
+    </select><br><br>
+    <button type="submit" >Submit</button>
+</form>

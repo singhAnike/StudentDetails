@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1>
+	<title>Student Data</title>
+	</h1>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			text-align: center;
+		}
+
+		table th, table td {
+			padding: 10px;
+			border: 1px solid #ddd;
+		}
+
+		table th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+			color: #333;
+		}
+
+		table tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		table tr:hover {
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+
+	 <body>  Students Data Table</body>
+	  <br/>
+	<table>
+		<thead>
+			<tr>
+				<th>Student Name</th>
+				<th>Board</th>
+				<th>Medium</th>
+				<th>Standard</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% comment %} template tag to write a logic {% endcomment %}
+			{% for student in students_list %} 
+	<tr>
+	  <td>{{ student.Student_Name }}</td>
+	  <td>{{ student.board_set.first.Board }}</td>
+	  <td>{{ student.medium_set.first.Medium }}</td>
+	  <td>{{ student.standard_set.first.Standard }}</td>
+	</tr>
+	{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
